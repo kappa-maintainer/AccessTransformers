@@ -137,7 +137,7 @@ public class TransformerProcessor {
                                     if (AccessTransformerEngine.INSTANCE.handlesClass(type)) {
                                         LOGGER.debug(AXFORM_MARKER,"Transforming class {}", type);
                                         AccessTransformerEngine.INSTANCE.transform(cn, type);
-                                        ClassWriter cw = new ClassWriter(Opcodes.ASM5);
+                                        ClassWriter cw = new ClassWriter(Opcodes.ASM9);
                                         cn.accept(cw);
                                         Files.write(outPath, cw.toByteArray());
                                     } else {
